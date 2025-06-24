@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Users/syifa/Membangun_Sistem_Machine_Learning/membangun-model/mlruns/830099792334352245/7d38f51c0a1a4346aac265ba2547710c/artifacts
+end_time: 1750280151979
+entry_point_name: ''
+experiment_id: '830099792334352245'
+lifecycle_stage: active
+run_id: 7d38f51c0a1a4346aac265ba2547710c
+run_name: salty-bass-564
+run_uuid: 7d38f51c0a1a4346aac265ba2547710c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750280139599
+status: 3
+tags: []
+user_id: syifa

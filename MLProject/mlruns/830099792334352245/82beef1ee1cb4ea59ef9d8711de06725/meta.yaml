@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Users/syifa/Membangun_Sistem_Machine_Learning/membangun-model/mlruns/830099792334352245/82beef1ee1cb4ea59ef9d8711de06725/artifacts
+end_time: 1750280173532
+entry_point_name: ''
+experiment_id: '830099792334352245'
+lifecycle_stage: active
+run_id: 82beef1ee1cb4ea59ef9d8711de06725
+run_name: bald-auk-74
+run_uuid: 82beef1ee1cb4ea59ef9d8711de06725
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750280161278
+status: 3
+tags: []
+user_id: syifa

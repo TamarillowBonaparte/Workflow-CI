@@ -1,0 +1,36 @@
+name: Train and Log Model with MLflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-activate-base: false
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install mlflow
+
+      - name: Run MLflow project with conda
+        env:
+          MLFLOW_CONDA_HOME: /usr/share/miniconda
+        run: |
+          mlflow run MLProject --env-manager=conda
+
+      - name: Upload model artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: trained-model
+          path: MLProject/outputs/trained_model.pkl

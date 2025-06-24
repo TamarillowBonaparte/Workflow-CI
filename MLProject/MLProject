@@ -1,0 +1,10 @@
+name: heart-disease-prediction
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters: {}
+    command: >
+      python processing.py &&
+      python modelling.py
