@@ -6,7 +6,6 @@ import os
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
-
 mlflow.set_tracking_uri("file:./mlruns")
 mlflow.set_experiment("Heart Disease Prediction")
 
@@ -18,16 +17,15 @@ y_train = train["condition"]
 X_test = test.drop("condition", axis=1)
 y_test = test["condition"]
 
-with mlflow.start_run():
-    mlflow.sklearn.autolog()
-    model = LogisticRegression()
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    acc = accuracy_score(y_test, y_pred)
-    print(f"Accuracy: {acc:.4f}")
+# Tidak perlu start_run
+mlflow.sklearn.autolog()
 
+model = LogisticRegression()
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+acc = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {acc:.4f}")
 
-# Buat folder output
+# Simpan model ke folder outputs
 os.makedirs("outputs", exist_ok=True)
-# Simpan model ke file setelah training
 joblib.dump(model, "MLProject/trained_model.pkl")
