@@ -27,5 +27,7 @@ acc = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {acc:.4f}")
 
 # Simpan model ke outputs
-joblib.dump(model, "MLProject/trained_model.pkl")
+os.makedirs("outputs", exist_ok=True)
+joblib.dump(model, "outputs/trained_model.pkl")
+
 
