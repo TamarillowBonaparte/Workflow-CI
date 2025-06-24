@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-input_path = "MLProject/heartdataset/heart.csv"
+input_path = "heartdataset/heart.csv"
 df = pd.read_csv(input_path)
 
 X = df.drop("condition", axis=1)
